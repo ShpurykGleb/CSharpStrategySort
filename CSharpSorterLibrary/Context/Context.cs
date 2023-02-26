@@ -23,6 +23,11 @@ namespace CSharpSorterLibrary.Context
         //Execute sort ascending
         public int ExecuteSortAscending<T>(T[] arr) where T : IComparable<T>
         {
+            if (arr.Length == 0)
+            {
+                return -1;
+            }
+
             int operationCount = _strategySort.SortAscending(arr);
             return operationCount;
         }
@@ -30,6 +35,11 @@ namespace CSharpSorterLibrary.Context
         //Execute sort descending
         public int ExecuteSortDescending<T>(T[] arr) where T : IComparable<T>
         {
+            if (arr.Length == 0)
+            {
+                return -1;
+            }
+
             int operationCount = _strategySort.SortDescending(arr);
             return operationCount;
         }
